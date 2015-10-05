@@ -2,7 +2,6 @@
 # vi: set ft=ruby :
 
 BOX               = "monvillalon/codetrotters" + (['foo'].pack('p').size == 4 ? "32" : "64")
-#BOX               = "codetrotters"
 NETWORK_INTERFACE = nil
 MACHINE_MEMORY    = 512
 PRIVATE_IP        = "192.168.2.99"
