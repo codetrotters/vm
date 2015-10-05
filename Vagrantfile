@@ -1,13 +1,16 @@
 # -*- mode: ruby -*-
 # vi: set ft=ruby :
 
+BOX               = "monvillalon/codetrotters" + (['foo'].pack('p').size == 4 ? "32" : "64")
+#BOX               = "codetrotters"
 NETWORK_INTERFACE = nil
 MACHINE_MEMORY    = 512
-PRIVATE_IP        = "192.168.99.99"
+PRIVATE_IP        = "192.168.2.99"
+GUI               = false
 
 Vagrant.configure(2) do |config|
 
-  config.vm.box               = "monvillalon/codetrotters"
+  config.vm.box               = BOX
   config.vm.box_check_update  = true
   config.vm.hostname          = "codetrotters"
   config.vm.network :public_network, bridge: NETWORK_INTERFACE
@@ -18,7 +21,7 @@ Vagrant.configure(2) do |config|
 
   #Configure Virtual Machine Settings
   config.vm.provider "virtualbox" do |vb|
-    vb.gui    = false
+    vb.gui    = GUI
     vb.memory = MACHINE_MEMORY
   end
 
