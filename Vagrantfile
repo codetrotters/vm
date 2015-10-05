@@ -7,6 +7,11 @@ MACHINE_MEMORY    = 512
 PRIVATE_IP        = "192.168.2.99"
 GUI               = false
 
+#Create the code folder if doesn't exist
+code_dir = File.dirname(__FILE__) + "/code"
+Dir.mkdir( code_dir ) unless File.exists?( code_dir )
+
+#Configure Vagrant
 Vagrant.configure(2) do |config|
 
   config.vm.box               = BOX
